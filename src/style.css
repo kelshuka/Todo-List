@@ -72,3 +72,10 @@ button {
     padding: 1.5em 2em;
 }
 
+.addDivs {
+    width: 20%;
+    height: 20%;
+    background-color: green;
+    margin-bottom: 10px;
+}
+
