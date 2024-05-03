@@ -22,20 +22,29 @@ const addEvents = document.querySelector('#addEvents');
 
 const navs = document.querySelectorAll('nav');
 
-navs.forEach((i) => {
-    i.addEventListener('click', ()=> {
-        addEvents.style.display = 'block';
+//navs.forEach((i) => {
+ //   i.addEventListener('click', ()=> {
+ //       addEvents.style.display = 'block';
     
-    });
-});
+ //   });
+//});
+
+const parentDiv = document.querySelector('.tasks');
+const parentDiv1 = document.querySelector('.tasks1');
+const parentDiv2 = document.querySelector('.tasks2');
 
 document.getElementById('highP').addEventListener('click', (e)=> {  
-    //const parentDiv = document.querySelector('.tasks');
-    //parentDiv.innerHTML = ''; 
+    parentDiv1.style.display = 'none'; 
+    parentDiv2.style.display = 'none'; 
+    addEvents.style.display = 'block';
     highEvents();   
 });
 
-document.getElementById('midP').addEventListener('click', (e)=> {   
+
+document.getElementById('midP').addEventListener('click', (e)=> {  
+    parentDiv.style.display = 'none'; 
+    parentDiv2.style.display = 'none'; 
+    addEvents.style.display = 'block';
     midEvents();   
 });
 

@@ -73,9 +73,17 @@ button {
 }
 
 .addDivs {
-    width: 20%;
-    height: 20%;
     background-color: green;
     margin-bottom: 10px;
+    padding-left: 10px;
 }
 
+.mainContents {
+    display: grid;
+    grid-template-columns: repeat(3, clamp(100px, 30%, 500px));
+    column-gap: 20px;
+}
+
+.notDisplay {
+    display: none;
+}

@@ -1,30 +1,39 @@
 
 import './style.css';
 
-function addToSchedule(...args) {
+
+function addToSchedule(a, b, c) {
     const parentDiv = document.querySelector('.tasks');
     //parentDiv.innerHTML = '';
 
     const subDiv = document.createElement('div');
     subDiv.innerHTML = '';
 
-    let i=0;
-    while (i < args.length ) {
-        for (i of args ) {
-            const contents = document.createElement('div');
-            contents.textContent = i;
+    const p1 = document.createElement('p');
+    p1.textContent = a;
+    //p1.classList.add('title');
 
-            subDiv.append(contents);
-        }
+    const p2 = document.createElement('p');
+    p2.textContent = b;
+    //p1.classList.add('title');
 
-        i++;
-    }
+    const p3 = document.createElement('p');
+    p3.textContent = c;
+    //p1.classList.add('title');
+
+    
+    subDiv.append(p1,p2,p3);
 
     subDiv.classList.add('addDivs');
+    console.log(subDiv.textContent);
 
-    parentDiv.appendChild(subDiv);
+    parentDiv.append(subDiv);
+    parentDiv.classList.add('mainContents');
+    console.log(parentDiv.textContent);
+
 
 }
+
 
 
 function myFormDivs(){
@@ -36,18 +45,9 @@ function myFormDivs(){
         const titl = document.querySelector("#title").value;
         const todo = document.querySelector("#todo").value;
         const date = document.querySelector("#date").value;
-    
-       
-        //let fer2 = addBookToLibrary(titl, auth, nuM);
-        //console.log(fer2);
-        //appendToCard(fer2);
 
         addToSchedule(titl, todo, date);
-        myForm.style.display = 'none';
-        
-
-        
-        //myLibrary.splice(0, myLibrary.length);
+        //myForm.style.display = 'none';
         
         
     });   
