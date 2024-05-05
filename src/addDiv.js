@@ -46,7 +46,7 @@ function myFormDivs(){
         const todo = document.querySelector("#todo").value;
         const date = document.querySelector("#date").value;
 
-        addToSchedule(titl, todo, date);
+        return addToSchedule(titl, todo, date);
         //myForm.style.display = 'none';
         
         

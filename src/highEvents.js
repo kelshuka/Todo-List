@@ -1,60 +1,14 @@
 
 import './style.css';
-//import { addToSchedule,myFormDivs } from "./addDiv";
+import { addToSchedule,myFormDivs } from "./addDiv";
 
 
-function addToSchedule(a, b, c) {
-    const parentDiv = document.querySelector('.tasks');
-    //parentDiv.innerHTML = '';
+//to store data locally
+const parentDiv = document.querySelector('.tasks');
 
-    const subDiv = document.createElement('div');
-    subDiv.innerHTML = '';
-
-    const p1 = document.createElement('p');
-    p1.textContent = a;
-    //p1.classList.add('title');
-
-    const p2 = document.createElement('p');
-    p2.textContent = b;
-    //p1.classList.add('title');
-
-    const p3 = document.createElement('p');
-    p3.textContent = c;
-    //p1.classList.add('title');
-
-    
-    subDiv.append(p1,p2,p3);
-
-    subDiv.classList.add('addDivs');
-    console.log(subDiv.textContent);
-
-    parentDiv.append(subDiv);
-    parentDiv.classList.add('mainContents');
-    console.log(parentDiv.textContent);
-
-
+function dataStorage(){
+    localStorage.setItem("data",parentDiv.innerHTML)
 }
-
-
-
-function myFormDivs(){
-
-    const myForm = document.querySelector('#myForm')
-
-    myForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const titl = document.querySelector("#title").value;
-        const todo = document.querySelector("#todo").value;
-        const date = document.querySelector("#date").value;
-
-        addToSchedule(titl, todo, date);
-        //myForm.style.display = 'none';
-        
-        
-    });   
-}
-
-
 
 
 function highEvents() {
@@ -66,6 +20,12 @@ function highEvents() {
         myFormDivs();
         
     });
+    dataStorage()
 }
 
-export{highEvents};
+
+function showDataBase(){
+    parentDiv.innerHTML = localStorage.getItem("data")
+}
+
+export{highEvents, showDataBase};
